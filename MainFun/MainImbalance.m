@@ -11,7 +11,7 @@ clear;
 clc;
 
 %% Load information of the dataset
-dataSetCand = {'DD','Cifar4096d_LongTail_2_8','Cifar4096d_LongTail_3_7','ILSVRC57Train_LongTail','cifar4096D_langtail','VOC20'};
+dataSetCand = {'DD','Cifar4096d_LongTail_2_8','Cifar4096d_LongTail_3_7','ILSVRC57Train_LongTail','cifar4096D_langtail'};
 n_datasets = length(dataSetCand);
 % for r = 1:n_datasets
 ds = 6;
@@ -19,7 +19,7 @@ ds = 6;
     dataSetTest = [dataSet '.mat'];
     dataTest = importdata(dataSetTest);
     
-%% Build a tree structure for categories with few samples and get a classification model 对样本少的类别进行建立树结构并得到分类模型
+%% Build a tree structure for categories with few samples and get a classification model
 [FewClass,acc,acc_few] = account_class(dataTest.data_array);
 Y = dataTest.data_array(:,end);
 dataset = dataTest.data_array(find((ismember(Y,FewClass,'rows'))'),1:end); 
