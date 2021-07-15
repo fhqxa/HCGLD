@@ -14,7 +14,7 @@ clc;
 dataSetCand = {'DD','Cifar4096d_LongTail_2_8','Cifar4096d_LongTail_3_7','ILSVRC57Train_LongTail','cifar4096D_langtail'};
 n_datasets = length(dataSetCand);
 % for r = 1:n_datasets
-ds = 6;
+ds = 1;
     dataSet = dataSetCand{ds};
     dataSetTest = [dataSet '.mat'];
     dataTest = importdata(dataSetTest);
